@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure all containers respect viewport width */
+* {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Sofia Sans', 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Maintain aspect ratio and prevent distortion */
+@media (max-aspect-ratio: 16/9) {
+  .home-container {
+    height: 100vh;
+    width: calc(100vh * 16/9);
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .home-container {
+    width: 100vw;
+    height: calc(100vw * 9/16);
+  }
+}
+
+/* Responsive text scaling */
+@media (max-width: 640px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1025px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Ensure minimum touch targets on mobile */
+@media (max-width: 640px) {
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
